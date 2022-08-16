@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+<link rel="stylesheet" href="style.css">
+
+<script src="main.js" defer></script>
+  
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>
+        <span>Rock</span>
+        <span>Paper</span>
+        <span>Scissors</span>
+      </h1>
+      <div class="score-container">
+        <h4>Score</h4>
+        <p id="score">0</p>
+      </div>
+    </header>
+    <main id="main">
+      <button class="btn-rotate     paper" name="paper">
+        <span class="wrapper">
+          <img src="./images/icon-paper.svg" alt="paper icon">
+        </span>
+      </button>
+      <button class="btn-rotate scissors" name="scissors">
+      <span class="wrapper">
+        <img src="./images/icon-scissors.svg" alt="scissors icon">
+      </span>
+      </button>
+      <button class="btn-rotate rock" name="rock">
+        <span class="wrapper">
+
+        <img src="./images/icon-rock.svg" alt="rock icon">
+        </span>
+      </button>
+    </main>
+    
+    <a href="rules.html">
+    <button class="rules" id="open">Rules</button>
+
+    </a>
+  </div>
+
+  <div class="selection" id="selection">
+    <div>
+      <h2 style="color: white;">You Picked</h2>
+      <div id="youPicked">
+
+      </div>
+    </div>
+    <div class="down">
+      <p class="big-text">You <span id="win">win</span></p>
+      <button class="btn" id="reset">Play again</button>
+    </div>
+
+    <div>
+      <h2 style="color: #fff;">The house picked</h2>
+      <div id="housePicked">
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Fauziya</a>.
+  </div> -->
+</body>
+</html>

@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:600,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,600&display=swap'); */
+*{
+    box-sizing: border-box;
+}
+body{
+    background: radial-gradient(circle at 50% 10%,
+    hsl(214, 47%, 23%),
+     hsl(237, 49%, 15%)
+     );
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    min-height: 100vh;
+}
+.container{
+    /* background-color: #fff; */
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+header{
+    border: 3px solid hsl(217, 16%, 45%);
+    display: flex;
+    border-radius: 10px;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 50px 0;
+    align-items: center;
+}
+h1{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 0.8;
+    font-size: 3rem;
+    color: #fff;
+
+}
+h2{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+}
+.score-container{
+    background-color: #fff;
+    padding: 20px 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+h4{
+    color: hsl(229, 64%, 46%);
+    margin: 0%;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+#score{
+    color: hsl(229, 25%, 31%);
+    font-size: 3.5rem;
+    margin: 0%;
+    font-weight: 700;
+
+}
+.rules{
+    border: 2px solid #fff;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #fff;
+    font-family: inherit;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 2px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+.btn-rotate{
+    border: none;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    box-shadow: inset 0 -5px rgba(0,0,0,0.15);
+    margin: 0 25px;
+    cursor: pointer;
+
+}
+.btn-rotate .wrapper{
+    background-color: #fff;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 5px rgba(0,0,0,0.15);
+}
+.paper{
+    background: linear-gradient( hsl(230, 89%, 62%),
+     hsl(230, 89%, 65%));
+}
+.scissors{
+    background: linear-gradient(hsl(39, 89%, 49%),
+     hsl(40, 84%, 53%));
+
+}
+.rock{
+    background: linear-gradient(hsl(349, 71%, 52%),
+     hsl(349, 70%, 56%));
+
+}
+main{
+    /* background-color: #fff; */
+    width: 400px;
+    height: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;   
+}
+main::before{
+    background-image: url('./images/bg-triangle.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    height: 70%;
+    width: 70%;
+    z-index: -1;
+
+}
+.btn{
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: #fff;
+    color: hsl(229, 25%, 31%);
+    font-family: inherit;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 2px;
+    
+}
+.selection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    margin: 0 auto;
+    width: 800px;
+    max-width: 100%;
+    /* display: none; */
+
+
+}
+.selection .btn-rotate{
+    margin: 50px;
+    transform: scale(1.4);
+
+}
+.big-text{
+    margin: 0 0 20px;
+    text-transform: uppercase;
+    line-height: 0.8;
+    font-size: 3rem;
+    color: #fff;
+}
+.rules-model{
+    background-color: #f0f0f0;
+    position: fixed;
+    top: 0%;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+}
+.rules-model button{
+    background-color: transparent;
+    margin-top: 100px;
+    border: none;
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+/* @media(max-width: 900px){
+    .down{
+        order: 1;
+    }
+} */
