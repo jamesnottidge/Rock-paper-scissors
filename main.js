@@ -36,22 +36,52 @@ class GamePiece {
 }
 
 class Display {
-  constructor() {}
+  constructor(score) {
+    this._score = 0;
+  }
 
   displayTile(choice, player) {
     const userPicked = document.querySelector("#you-picked");
     const computerPicked = document.querySelector("#computer-picked");
+
     player === "user"
       ? (userPicked.innerHTML = choice.getHTML())
       : (computerPicked.innerHTML = choice.getHTML());
+  }
+
+  displayTileWinner(winner) {
+    const win = document.querySelector("#win");
+    const scoreBoard = document.querySelector("#score");
+    console.log(winner);
+    if (winner === "user") {
+      win.innerHTML = "You win";
+      this._score += 1;
+      scoreBoard.innerHTML = `${this._score}`;
+    } else {
+      win.innerHTML = "You Lose";
+    }
+  }
+
+  checkWinner(userChoice, computerChoice) {
+    if (
+      (userChoice.getPiece() === "paper" &&
+        computerChoice.getPiece() === "rock") ||
+      (userChoice.getPiece() === "rock" &&
+        computerChoice.getPiece() === "scissors") ||
+      (userChoice.getPiece() === "scissors" &&
+        computerChoice.getPiece() === "paper")
+    ) {
+      return "user";
+    } else {
+      return "computer";
+    }
   }
 }
 
 const scoreEl = document.getElementById("score");
 const buttons = document.querySelectorAll(".btn-rotate");
 const rockTile = document.querySelector(".rock");
-const display = new Display();
-let score = 0;
+const display = new Display(0);
 
 let userChoice = undefined;
 let computersChoice = new GamePiece("none");
@@ -60,25 +90,9 @@ buttons.forEach((button) => {
   button.addEventListener("click", () => {
     let piece = button.getAttribute("name");
     userChoice = new GamePiece(piece);
+    computersChoice.getRandomPiece();
     display.displayTile(userChoice, "user");
-    console.log(computersChoice.getRandomPiece());
     display.displayTile(computersChoice, "computer");
+    display.displayTileWinner(display.checkWinner(userChoice, computersChoice));
   });
 });
-
-//computers choice
-
-function updateScore(value) {
-  score += value;
-  scoreEl.innerText = score;
-}
-function checkWinner() {
-  const computerChoice = pickRandomChoice();
-
-  if (
-    (userChoice === "paper" && computerChoice === "rock") ||
-    (userChoice === "rock" && computerChoice === "scissors") ||
-    (userChoice === "scissors" && computerChoice === "paper")
-  ) {
-  }
-}
