@@ -1,8 +1,11 @@
 export class Display {
-    constructor(){}
+  constructor() {}
 
-    displayTIle(choice) {
-        const userPicked = document.querySelector('#you-picked');
-        const computerPicked = document.querySelector('#computer-pic')
-    }
+  displayTile(choice, player) {
+    const userPicked = document.querySelector("#you-picked");
+    const computerPicked = document.querySelector("#computer-pic");
+    player === "user"
+      ? (userPicked.innerHTML = choice.getHTML())
+      : computerPicked.getHTML();
+  }
 }
